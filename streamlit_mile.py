@@ -4,7 +4,8 @@ import joblib
 
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
-m=0
+st.session_state.count=0
+m=st.session_state.count
 def initial(m):
    if m==0:
       st.markdown(""" """)
