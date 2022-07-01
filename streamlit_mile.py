@@ -8,8 +8,21 @@ st.header("Heart Disease App")
 
 if st.button("Proceed"):
 	st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
-	st.markdown(""" <p style="font-size: 22px;">What is you BMI? </p>""", unsafe_allow_html=True)
-	BMI=st.number_input("Insert BMI",min_value=10.000, max_value=100.000)
+	st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
+	BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000)
+	
+	st.markdown(""" <p style="font-size: 22px;">Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes]</p>""", unsafe_allow_html=True)
+	Smoking= st.selectbox("Select your answer", ("No", "Yes"))
+	
+	st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
+	BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000)
+	
+	st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
+	BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000)
+	
+	st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
+	BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000)
+	
 
 
 	
