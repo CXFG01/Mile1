@@ -16,8 +16,8 @@ def start():
 	
 
 
-if st.button("Proceed", on_click=start()):
-	st.markdown(""" """)
+if st.button("Proceed"):
+	start()
 else:
 	st.markdown("""
 	<p style="font-size: 22px;">Hey there! </p>
