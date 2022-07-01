@@ -5,6 +5,8 @@ import joblib
 
 st.header("Heart Disease App")
 
+st.set_page_config(page_title="Heart Prediction", layout="wide")
+
 st.markdown("""
 
 Hey there!
