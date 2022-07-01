@@ -2,10 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-
+st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 
-st.set_page_config(page_title="Heart Prediction", layout="wide")
 
 st.markdown("""
 
