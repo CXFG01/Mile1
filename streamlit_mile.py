@@ -7,7 +7,7 @@ st.header("Heart Disease App")
 
 st.markdown("""
 
-Hey there!
+<p style="font-size: 22px;">Hey there! </p>
 
 <p style="font-size: 22px;">This app here uses the power of machine learning(traditional and neural) to help predict the affliction of an individual with Coronary Heart Disease or Myocardial Infraction(Heart Attack). </p>
 
