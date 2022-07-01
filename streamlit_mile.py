@@ -7,7 +7,12 @@ st.header("Heart Disease App")
 
 
 if st.button("Proceed"):
-	st.markdown(""" """)
+	st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
+	st.markdown(""" <p style="font-size: 22px;">What is you BMI? </p>""", unsafe_allow_html=True)\
+	BMI=st.number_input("Insert BMI",min_value=10.000, max_value=100.000)
+
+
+	
 else:
 	st.markdown("""
 	<p style="font-size: 22px;">Hey there! </p>
