@@ -14,4 +14,4 @@ Hey there!
 # By no means is this a medical tool and only a certified doctor can inquire further in your problem.
 # Irrelevant of the result, have periodic visits at the doctor to know more about the body's condition.
 
-""")
+""", unsafe_allow_html=True)
