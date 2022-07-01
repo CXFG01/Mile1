@@ -16,7 +16,7 @@ def start():
 	
 
 
-if st.button("Proceed", on_change=start()):
+if st.button("Proceed", on_click=start()):
 	st.markdown(""" """)
 else:
 	st.markdown("""
