@@ -4,8 +4,9 @@ import joblib
 
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
-m=0
-if !st.button("Proceed"):
+
+
+if st.button("Proceed"):
 	st.markdown(""" """)
 else:
 	st.markdown("""
