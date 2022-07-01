@@ -14,10 +14,10 @@ def start():
 	Smoking= st.selectbox("Select your answer", ("No", "Yes"), key=2)
 	
 	st.markdown(""" <p style="font-size: 22px;">Heavy drinkers (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week</p>""", unsafe_allow_html=True)
-	AlcoholDrinking= st.selectbox("Select your answer", ("No", "Yes"), key=3)
+	AlcoholDrinking= st.selectbox("Select your answer", ("Not a heavy drinker", "A heavy drinker"), key=3)
 	
 	st.markdown(""" <p style="font-size: 22px;">Told/had a stroke?</p>""", unsafe_allow_html=True)
-	Stroke= st.selectbox("Select your answer", ("No", "Yes"), key=4)
+	Stroke= st.selectbox("Select your answer", ("No i have not", "Yes i have"), key=4)
 	
 	st.markdown(""" <p style="font-size: 22px;">Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good? (0-30 days)</p>""", unsafe_allow_html=True)
 	PhysicalHealth= st.number_input("Insert days",min_value=0.00, max_value=30.00, key=5)
@@ -26,10 +26,10 @@ def start():
 	MentalHealth= st.number_input("Insert days",min_value=0.00, max_value=30.00, key=6)
 	
 	st.markdown(""" <p style="font-size: 22px;">Do you have serious difficulty walking or climbing stairs?</p>""", unsafe_allow_html=True)
-	DiffWalking= st.selectbox("Select your answer", ("No", "Yes"), key=7)
+	DiffWalking= st.selectbox("Select your answer", ("No i do not", "Yes I do"), key=7)
 	
 	st.markdown(""" <p style="font-size: 22px;">Are you male or female?</p>""", unsafe_allow_html=True)
-	Sex= st.selectbox("Select your answer", ("No", "Yes"), key=8)
+	Sex= st.selectbox("Select your answer", ("Female", "Male"), key=8)
 	
 	st.markdown(""" <p style="font-size: 22px;">In what age category do you fit in?</p>""", unsafe_allow_html=True)
 	AgeCategory = st.selectbox("Select your answer", ("No", "Yes"), key=9)
