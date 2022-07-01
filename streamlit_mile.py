@@ -18,7 +18,7 @@ else:
   Irrelevant of the result, have periodic visits at the doctor to know more about the body's condition.
   </b></p>
 
-  <p style="font-size: 22px;">Now, let's see what the AI says about your situation! </p>
+  <p style="font-size: 22px;">Now, let's see what the AI says about your situation! (Press Proceed at the top) </p>
 
 
   """, unsafe_allow_html=True)
