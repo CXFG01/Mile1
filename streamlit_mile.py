@@ -7,7 +7,7 @@ st.header("Heart Disease App")
 
 def initial(m):
    if m==1:
-      st.markdown(##)
+      st.markdown(""" """)
    else:
       st.markdown("""
       <p style="font-size: 22px;">Hey there! </p>
