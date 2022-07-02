@@ -105,20 +105,20 @@ with st.form(key='form1'):
 	st.session_state.m[12]= st.selectbox("Select your answer", ('Excellent','Very good' ,'Good', 'Fair', 'Poor'), key=13)
 
 		
-	st.markdown(""" <p style="font-size: 22px;">On average, how many hours of sleep do you get in a 24-hour period?</p>""", unsafe_allow_html=True)
-	st.session_state.m[13] = st.number_input("Time",min_value=1.00, max_value=24.00, key=14)
+	#st.markdown(""" <p style="font-size: 22px;">On average, how many hours of sleep do you get in a 24-hour period?</p>""", unsafe_allow_html=True)
+	#st.session_state.m[13] = st.number_input("Time",min_value=1.00, max_value=24.00, key=14)
 
 		
 	st.markdown(""" <p style="font-size: 22px;">Ever told/you had asthma?</p>""", unsafe_allow_html=True)
-	st.session_state.m[14]= st.selectbox("Select your answer", ("No", "Yes"), key=15)
+	st.session_state.m[13]= st.selectbox("Select your answer", ("No", "Yes"), key=15)
 
 		
 	st.markdown(""" <p style="font-size: 22px;">Not including kidney stones, bladder infection or incontinence, were you ever told you had kidney disease?</p>""", unsafe_allow_html=True)
-	st.session_state.m[15]= st.selectbox("Select your answer", ("No", "Yes"), key=16)
+	st.session_state.m[14]= st.selectbox("Select your answer", ("No", "Yes"), key=16)
 
 		
 	st.markdown(""" <p style="font-size: 22px;">Ever told/you had skin cancer?</p>""", unsafe_allow_html=True)
-	st.session_state.m[16] = st.selectbox("Select your answer", ("No", "Yes"), key=17)
+	st.session_state.m[15] = st.selectbox("Select your answer", ("No", "Yes"), key=17)
 
 	st.form_submit_button(label='Submit', on_click=state())
 	
@@ -137,10 +137,9 @@ if st.session_state.state==1 and st.session_state.form==1:
 		     'Diabetic': [st.session_state.m[10]],
 		     'PhysicalActivity': [st.session_state.m[11]],
 		     'GenHealth':[st.session_state.m[12]],
-		     'SleepTime': [st.session_state.m[13]],
-		     'Asthma': [st.session_state.m[14]],
-		     'KidneyDisease': [st.session_state.m[15]],
-		     'SkinCancer': [st.session_state.m[16]]}
+		     'Asthma': [st.session_state.m[13]],
+		     'KidneyDisease': [st.session_state.m[14]],
+		     'SkinCancer': [st.session_state.m[15]]}
 	X = pd.DataFrame(data=d)
 	X
 	st.write("Your data transformed:")
