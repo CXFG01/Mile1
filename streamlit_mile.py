@@ -5,6 +5,7 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 lis=list()
+
 if 'k' not in st.session_state:
     st.session_state.k = 0
 
@@ -25,7 +26,7 @@ def state():
 	st.session_state.form = 1
 	st.session_state.m=lis
 	
-
+BMI=0
 def start():
 	with st.form(key='form1'):
 		st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
@@ -121,24 +122,25 @@ if not butt1 and st.session_state.state==0:
 elif butt1 and st.session_state.state==0 :
 	start()
 if st.session_state.state==1 and st.session_state.form==1 :
-	d = {'BMI': [st.session_state.m[0]],
-		     'Smoking': [st.session_state.m[1]],
-		     'AlchoholDrinking': [st.session_state.m[2]],
-		     'Stroke': [st.session_state.m[3]],
-		     'PhysicalHealth': [st.session_state.m[4]],
-		     'MentalHealth': [st.session_state.m[5]],
-		     'DiffWalking': [st.session_state.m[6]],
-		     'Sex': [st.session_state.m[7]],
-		     'AgeCategory': [st.session_state.m[8]],
-		     'Race': [st.session_state.m[9]],
-		     'Diabetic': [st.session_state.m[10]],
-		     'PhysicalActivity': [st.session_state.m[11]],
-		     'GenHealth':[st.session_state.m[12]],
-		     'SleepTime': [st.session_state.m[13]],
-		     'Asthma': [st.session_state.m[14]],
-		     'KidneyDisease': [st.session_state.m[15]],
-		     'SkinCancer': [st.session_state.m[16]]}
-	df = pd.DataFrame(data=d)
-	df
+	st.write(BMI)
+	#d = {'BMI': [st.session_state.m[0]],
+	#	     'Smoking': [st.session_state.m[1]],
+	#	     'AlchoholDrinking': [st.session_state.m[2]],
+	#	     'Stroke': [st.session_state.m[3]],
+	#	     'PhysicalHealth': [st.session_state.m[4]],
+	#	     'MentalHealth': [st.session_state.m[5]],
+	#	     'DiffWalking': [st.session_state.m[6]],
+	#	     'Sex': [st.session_state.m[7]],
+	#	     'AgeCategory': [st.session_state.m[8]],
+	#	     'Race': [st.session_state.m[9]],
+	#	     'Diabetic': [st.session_state.m[10]],
+	#	     'PhysicalActivity': [st.session_state.m[11]],
+	#	     'GenHealth':[st.session_state.m[12]],
+	#	     'SleepTime': [st.session_state.m[13]],
+	#	     'Asthma': [st.session_state.m[14]],
+	#	     'KidneyDisease': [st.session_state.m[15]],
+	#	     'SkinCancer': [st.session_state.m[16]]}
+	#df = pd.DataFrame(data=d)
+	#df
   
 
