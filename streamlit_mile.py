@@ -68,6 +68,6 @@ if not butt1 and st.session_state.state==0:
 elif butt1 and st.session_state.state==0 :
 	st.session_state.form=str(start())
 if st.session_state.state==1:
-	st.write(st.session_state_form)
+	st.write(st.session_state.form)
   
 
