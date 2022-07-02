@@ -1,5 +1,9 @@
 import streamlit as st
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import tensorflow as tf
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.impute import SimpleImputer
 import joblib
 
 st.set_page_config(page_title="Heart Prediction", layout="wide")
@@ -137,7 +141,31 @@ if st.session_state.state==1 and st.session_state.form==1:
 		     'Asthma': [st.session_state.m[14]],
 		     'KidneyDisease': [st.session_state.m[15]],
 		     'SkinCancer': [st.session_state.m[16]]}
-	df = pd.DataFrame(data=d)
-	df
+	X = pd.DataFrame(data=d)
+	cols= [col for col in X.columns]
+
+	object_cols = [col for col in X.columns if X[col].dtype == "object"]
+
+	# Columns that can be safely ordinal encoded
+	good_label_cols = [col for col in object_cols if set(X[col]).issubset(set(X[col]))]
+        
+	# Problematic columns that will be dropped from the dataset
+	bad_label_cols = list(set(object_cols)-set(good_label_cols))
+
+	ordinal_encoder = OrdinalEncoder()
+	my_imputer=SimpleImputer(strategy='median')
+
+	label_X = X.drop(bad_label_cols, axis=1)
+
+	label_X[good_label_cols] = ordinal_encoder.fit_transform(X[good_label_cols])
+
+	imp_lab_X=pd.DataFrame(my_imputer.fit_transform(label_X))
+
+	X=imp_lab_X
+
+	X.columns=cols
+	
+	nn=joblib.load(nn.pkl)
+	clf2=joblib.load(clf2.pkl)
   
 
