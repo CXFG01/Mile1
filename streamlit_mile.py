@@ -154,7 +154,23 @@ if st.session_state.state==1 and st.session_state.form==1:
 	# Problematic columns that will be dropped from the dataset
 	bad_label_cols = list(set(object_cols)-set(good_label_cols))
 
-	ordinal_encoder = OrdinalEncoder()
+	ordinal_encoder = OrdinalEncoder(categories=[['No', 'Yes'],
+ ['No', 'Yes'],
+ ['No', 'Yes'],
+ ['No', 'Yes'],
+ ['No', 'Yes'],
+ ['Female', 'Male'],
+ ['18-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54',
+  '55-59', '60-64', '65-69', '70-74', '75-79', '80 or older'],
+ ['American Indian/Alaskan Native', 'Asian', 'Black', 'Hispanic',
+        'Other', 'White'],
+ ['No', 'No, borderline diabetes', 'Yes', 'Yes (during pregnancy)'],
+ ['No', 'Yes'],
+ ['Excellent', 'Fair', 'Good', 'Poor', 'Very good'],
+ ['No', 'Yes'],
+ ['No', 'Yes'],
+ ['No', 'Yes'],
+])
 	my_imputer=SimpleImputer(strategy='median')
 	
 	good_label_cols
