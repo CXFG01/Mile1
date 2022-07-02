@@ -4,7 +4,7 @@ import joblib
 
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
-
+lis=list()
 if 'k' not in st.session_state:
     st.session_state.k = 0
 
@@ -27,7 +27,6 @@ def state():
 
 def start():
 	with st.form(key='form1'):
-		lis=list()
 		st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
 		st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
 		BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000, key=1, on_change=add())
@@ -64,9 +63,7 @@ def start():
 		st.markdown(""" <p style="font-size: 22px;">In what age category do you fit in?</p>""", unsafe_allow_html=True)
 		AgeCategory = st.selectbox("Select your answer", ("18-24", "25-29","30-34","35-39","40-44","45-59","50-54","55-59","60-64","65-69","70-74","75-79","80 or older"), key=9)
 		lis.append(AgeCategory)
-		
-		st.session_state.m=lis
-		
+				
 		st.form_submit_button(label='Submit', on_click=state())
 			
 def predict(results):
@@ -90,7 +87,6 @@ if not butt1 and st.session_state.state==0:
 elif butt1 and st.session_state.state==0 :
 	st.session_state.m=start()
 if st.session_state.state==1 and st.session_state.form==1 :
-	predict(st.session_state.m)
-	st.write("Helloooooooo")
+	st.write(lis)
   
 
