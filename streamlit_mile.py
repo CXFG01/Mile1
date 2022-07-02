@@ -33,7 +33,7 @@ def predict(results):
 #number = st.number_input('Insert a number')
 #st.write('The current number is ', number)
 
-if not butt1 and st.session_state.state==0:
+if st.session_state.state==0:
 	st.markdown("""
 	<p style="font-size: 22px;">Hey there! </p>
 	
