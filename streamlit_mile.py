@@ -61,7 +61,7 @@ if not st.button("Proceed", key='pro') and st.session_state.state!=0:
 	<p style="font-size: 22px;">Now, let's see what the AI says about your situation! (Press Proceed at the top) </p>
 	""", unsafe_allow_html=True)
 	
-elif st.button("Proceed", key='pro') and st.session_state.state!=0 :
+elif st.button("Proceed", key='pro2') and st.session_state.state!=0 :
 	m=str(start())
 	st.write(m)
   
