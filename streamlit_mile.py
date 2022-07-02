@@ -23,37 +23,47 @@ def state():
 
 def start():
 	with st.form(key='form1'):
+		lis=list()
 		st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
 		st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
 		BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000, key=1, on_change=add())
+		lis.append(BMI)
 	
 		st.markdown(""" <p style="font-size: 22px;">Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes]</p>""", unsafe_allow_html=True)
 		Smoking= st.selectbox("Select your answer", ("No", "Yes"), key=2)
+		lis.append(Smoking)
 	
 		st.markdown(""" <p style="font-size: 22px;">Heavy drinkers (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week</p>""", unsafe_allow_html=True)
 		AlcoholDrinking= st.selectbox("Select your answer", ("Not a heavy drinker", "A heavy drinker"), key=3)
-	
+		lis.append(AlcoholDrinking)
+		
 		st.markdown(""" <p style="font-size: 22px;">Told/had a stroke?</p>""", unsafe_allow_html=True)
 		Stroke= st.selectbox("Select your answer", ("No i have not", "Yes i have"), key=4)
-	
+		lis.append(Stroke)
+		
 		st.markdown(""" <p style="font-size: 22px;">Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good? (0-30 days)</p>""", unsafe_allow_html=True)
 		PhysicalHealth= st.number_input("Insert days",min_value=0.00, max_value=30.00, key=5)
-	
+		lis.append(PhysicalHealth)
+		
 		st.markdown(""" <p style="font-size: 22px;">Thinking about your mental health, for how many days during the past 30 days was your mental health not good? (0-30 days)</p>""", unsafe_allow_html=True)
 		MentalHealth= st.number_input("Insert days",min_value=0.00, max_value=30.00, key=6)
-	
+		lis.append(MentalHealth)
+		
 		st.markdown(""" <p style="font-size: 22px;">Do you have serious difficulty walking or climbing stairs?</p>""", unsafe_allow_html=True)
 		DiffWalking= st.selectbox("Select your answer", ("No i do not", "Yes I do"), key=7)
-	
+		lis.append(DiffWalking)
+		
 		st.markdown(""" <p style="font-size: 22px;">Are you male or female?</p>""", unsafe_allow_html=True)
 		Sex= st.selectbox("Select your answer", ("Female", "Male"), key=8)
-	
+		lis.append(Sex)
+		
 		st.markdown(""" <p style="font-size: 22px;">In what age category do you fit in?</p>""", unsafe_allow_html=True)
 		AgeCategory = st.selectbox("Select your answer", ("18-24", "25-29","30-34","35-39","40-44","45-59","50-54","55-59","60-64","65-69","70-74","75-79","80 or older"), key=9)
-	
-		results=list(BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory)
+		lis.append(AgeCategory)
+		
+		
 		if st.form_submit_button(label='Submit', on_click=state()):
-			predict(results)
+			predict(lis)
 			
 def predict(results):
 	st.write("Hello")
