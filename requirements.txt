@@ -3,3 +3,4 @@ sklearn
 tensorflow
 xgboost
 dill
+streamlit==1.10.1
