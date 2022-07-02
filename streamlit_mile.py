@@ -12,7 +12,7 @@ def add(n):
 	n=n+1
 
 def state():
-	st.session_state.state +=1
+	st.session_state.state =1
 	
 
 def start():
@@ -64,6 +64,7 @@ if not butt1 and st.session_state.state==0:
 	
 elif butt1 and st.session_state.state==0 :
 	m=str(start())
+if st.session_state.state==1:
 	st.write(m)
   
 
