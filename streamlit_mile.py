@@ -165,6 +165,8 @@ if st.session_state.state==1 and st.session_state.form==1:
 
 	X.columns=cols
 	
+	X
+	
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2.pkl')
   
