@@ -41,7 +41,7 @@ def start():
 		AlcoholDrinking= st.selectbox("Select your answer", ("Not a heavy drinker", "A heavy drinker"), key=3)
 		lis.append(AlcoholDrinking)
 		
-		st.markdown(""" <p style="font-size: 22px;">Told/had a stroke?</p>""", unsafe_allow_html=True)
+		st.markdown(""" <p style="font-size: 22px;">Ever told/you had stroke?</p>""", unsafe_allow_html=True)
 		Stroke= st.selectbox("Select your answer", ("No i have not", "Yes i have"), key=4)
 		lis.append(Stroke)
 		
@@ -64,6 +64,39 @@ def start():
 		st.markdown(""" <p style="font-size: 22px;">In what age category do you fit in?</p>""", unsafe_allow_html=True)
 		AgeCategory = st.selectbox("Select your answer", ("18-24", "25-29","30-34","35-39","40-44","45-59","50-54","55-59","60-64","65-69","70-74","75-79","80 or older"), key=9)
 		lis.append(AgeCategory)
+		
+		st.markdown(""" <p style="font-size: 22px;">Race</p>""", unsafe_allow_html=True)
+		Race = st.selectbox("Select your answer", ('American Indian/Alaskan Native', 'Asian', 'Black', 'Hispanic', 'Other', 'White'), key=10)
+		lis.append(Race)
+		
+		st.markdown(""" <p style="font-size: 22px;">Ever Told/Had diabetes?p>""", unsafe_allow_html=True)
+		Diabetic= st.selectbox("Select your answer", ('No', 'No, borderline diabetes', 'Yes', 'Yes (during pregnancy)'), key=11)
+		lis.append(Diabetic)
+		
+		st.markdown(""" <p style="font-size: 22px;">Have you been engaging in physical activity or exercise during the past 30 days other than your regular job</p>""", unsafe_allow_html=True)
+		PhysicalActivity= st.selectbox("Select your answer", ('No','Yes'), key=12)
+		lis.append(PhysicalActivity)
+		
+		st.markdown(""" <p style="font-size: 22px;">Would you say that in general your health is...</p>""", unsafe_allow_html=True)
+		GenHealth= st.selectbox("Select your answer", ('Excellent','Very good' ,'Good', 'Fair', 'Poor'), key=13)
+		lis.append(GenHealth)
+		
+		st.markdown(""" <p style="font-size: 22px;">On average, how many hours of sleep do you get in a 24-hour period?</p>""", unsafe_allow_html=True)
+		SleepTime = st.number_input("Time",min_value=1.00, max_value=24.00, key=14)
+		lis.append(SleepTime)
+		
+		st.markdown(""" <p style="font-size: 22px;">Ever told/you had asthma?</p>""", unsafe_allow_html=True)
+		Asthma= st.selectbox("Select your answer", ("No i do not", "Yes I do"), key=15)
+		lis.append(Asthma)
+		
+		st.markdown(""" <p style="font-size: 22px;">Not including kidney stones, bladder infection or incontinence, were you ever told you had kidney disease?</p>""", unsafe_allow_html=True)
+		KidneyDisease= st.selectbox("Select your answer", ("No", "Yes"), key=16)
+		lis.append(KidneyDisease)
+		
+		st.markdown(""" <p style="font-size: 22px;">Ever told/you had skin cancer?</p>""", unsafe_allow_html=True)
+		SkinCancer = st.selectbox("Select your answer", ("No i do not", "Yes I do"), key=17)
+		lis.append(SkinCancer)
+		
 				
 		st.form_submit_button(label='Submit', on_click=state())
 			
@@ -88,6 +121,25 @@ if not butt1 and st.session_state.state==0:
 elif butt1 and st.session_state.state==0 :
 	start()
 if st.session_state.state==1 and st.session_state.form==1 :
-	st.write(st.session_state.m)
+	st.session_state.m
+	d = {'BMI': [st.session_state.m[0]],
+		     'Smoking': [st.session_state.m[1]],
+		     'AlchoholDrinking': [st.session_state.m[2]],
+		     'Stroke': [st.session_state.m[3]],
+		     'PhysicalHealth': [st.session_state.m[4]],
+		     'MentalHealth': [st.session_state.m[5]],
+		     'DiffWalking': [st.session_state.m[6]],
+		     'Sex': [st.session_state.m[7]],
+		     'AgeCategory': [st.session_state.m[8]],
+		     'Race': [st.session_state.m[9]],
+		     'Diabetic': [st.session_state.m[10]],
+		     'PhysicalActivity': [st.session_state.m[11]],
+		     'GenHealth':[st.session_state.m[12]],
+		     'SleepTime': [st.session_state.m[13]],
+		     'Asthma': [st.session_state.m[14]],
+		     'KidneyDisease': [st.session_state.m[15]],
+		     'SkinCancer': [st.session_state.m[16]]}
+	df = pd.DataFrame(data=d)
+	df
   
 
