@@ -5,7 +5,7 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 lis=list()
-global BMI
+BMI=45
 
 if 'k' not in st.session_state:
     st.session_state.k = 0
