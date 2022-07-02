@@ -157,8 +157,10 @@ if st.session_state.state==1 and st.session_state.form==1:
 	X
 	
 	
-	
+	st.write("The Prediction:")
+	st.write("Firstly, by the neural network:")
 	nn=joblib.load('nn.pkl')
+	nn.predict(X)*100
 	clf2=joblib.load('clf2.pkl')
   
 
