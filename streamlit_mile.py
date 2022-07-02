@@ -19,8 +19,6 @@ def add():
 
 def state():
 	st.session_state.state = 1
-	
-def formm():
 	st.session_state.form = 1
 	
 
@@ -65,9 +63,7 @@ def start():
 		lis.append(AgeCategory)
 		
 		
-		if st.form_submit_button(label='Submit', on_click=state()):
-			formm()
-			#predict(lis)
+		if st.form_submit_button(label='Submit', on_click=state())
 			
 def predict(results):
 	st.write("Hello")
