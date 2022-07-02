@@ -9,13 +9,14 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 
-nn=0
-clf2=0
+
 
 lis=list()
 
 @st.cache
 def call():
+	global nn
+	global clf2
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2 .pkl')
 	
