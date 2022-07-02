@@ -13,8 +13,8 @@ st.header("Heart Disease App")
 
 lis=list()
 
-@st.cache
-def call(hash_funcs={builtins.dict: hash}):
+@st.cache(hash_funcs={builtins.dict: hash})
+def call():
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2 .pkl')
 	return nn, clf2
