@@ -40,7 +40,7 @@ def start():
 	if k==1:
 		return BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory
 	else:
-		st.write("No)
+		st.write("No")
 if st.button("Proceed", key='pro'):
 	m=str(start())
 	st.write(m)
