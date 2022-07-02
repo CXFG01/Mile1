@@ -9,7 +9,6 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 
-@st.cache
 
 lis=list()
 
@@ -124,7 +123,8 @@ with st.form(key='form1'):
 	st.session_state.m[15] = st.selectbox("Select your answer", ("No", "Yes"), key=17)
 
 	st.form_submit_button(label='Submit', on_click=state())
-	
+
+@st.cache	
 if st.session_state.state==1 and st.session_state.form==1:
 	st.write("Your data so far:")
 	d = {'BMI': [st.session_state.m[0]],
