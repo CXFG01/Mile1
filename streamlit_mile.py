@@ -12,7 +12,7 @@ if 'state' not in st.session_state:
     st.session_state.state = 0
 
 if 'form' not in st.session_state :
-    st.session_state.form = 69
+    st.session_state.form = []
 
 def add():
 	st.session_state.k +=1
