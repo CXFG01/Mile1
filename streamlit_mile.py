@@ -86,7 +86,7 @@ if not butt1 and st.session_state.state==0:
 	""", unsafe_allow_html=True)
 	
 elif butt1 and st.session_state.state==0 :
-	st.session_state.m=start()
+	start()
 if st.session_state.state==1 and st.session_state.form==1 :
 	st.write(st.session_state.m)
   
