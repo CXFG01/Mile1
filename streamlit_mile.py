@@ -15,10 +15,9 @@ lis=list()
 
 @st.cache
 def call():
-	global nn
-	global clf2
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2 .pkl')
+	return nn, clf2
 	
 
 if 'k' not in st.session_state:
@@ -165,7 +164,7 @@ if st.session_state.state==1 and st.session_state.form==1:
 	X=X.replace(switch)
 	X
 	
-	call()
+	nn, clf2 = call()
 	
 	st.write("The Prediction:")
 	st.write("Firstly, by the neural network:")
