@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+
+while True:
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
-while True: 
 	def start():
 		st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
 		st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
