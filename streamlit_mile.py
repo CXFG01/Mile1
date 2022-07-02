@@ -121,7 +121,7 @@ elif butt1 and st.session_state.state==0 :
 				
 		st.form_submit_button(label='Submit', on_click=state())
 	
-if st.session_state.state==1 and st.session_state.form==1 :
+if st.session_state.state==1 and st.session_state.form==1:
 	d = {'BMI': [st.session_state.m[0]],
 		     'Smoking': [st.session_state.m[1]],
 		     'AlchoholDrinking': [st.session_state.m[2]],
