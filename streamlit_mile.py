@@ -121,7 +121,6 @@ if not butt1 and st.session_state.state==0:
 elif butt1 and st.session_state.state==0 :
 	start()
 if st.session_state.state==1 and st.session_state.form==1 :
-	st.session_state.m
 	d = {'BMI': [st.session_state.m[0]],
 		     'Smoking': [st.session_state.m[1]],
 		     'AlchoholDrinking': [st.session_state.m[2]],
