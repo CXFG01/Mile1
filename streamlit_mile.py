@@ -53,7 +53,7 @@ def start():
 	
 		results=[BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory]
 		if st.form_submit_button(label='Submit', on_click=state()):
-			st.write(results)
+			st.session_state.form = results
 butt1=st.button("Proceed", key='pro')
 if not butt1 and st.session_state.state==0:
 	st.markdown("""
