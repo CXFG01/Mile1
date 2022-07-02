@@ -66,8 +66,8 @@ def start():
 		lis.append(AgeCategory)
 		
 		st.write(lis)
-		return lis
-		st.form_submit_button(label='Submit', on_click=state())
+		if st.form_submit_button(label='Submit', on_click=state()):
+			return lis
 			
 def predict(results):
 	st.write(results)
