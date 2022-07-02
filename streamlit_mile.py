@@ -29,7 +29,6 @@ def state():
 def predict(results):
 	st.write(results)
 
-butt1=st.button("Proceed", key='pro', disabled=st.session_state.state)
 
 #number = st.number_input('Insert a number')
 #st.write('The current number is ', number)
