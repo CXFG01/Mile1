@@ -4,10 +4,14 @@ import joblib
 
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
+k=0
+def add(n):
+	n=n+1
+
 def start():
 	st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
 	st.markdown(""" <p style="font-size: 22px;">What is your BMI? </p>""", unsafe_allow_html=True)
-	BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000, key=1)
+	BMI= st.number_input("Insert BMI",min_value=10.000, max_value=100.000, key=1, on_change=add(k))
 	
 	st.markdown(""" <p style="font-size: 22px;">Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes]</p>""", unsafe_allow_html=True)
 	Smoking= st.selectbox("Select your answer", ("No", "Yes"), key=2)
@@ -33,8 +37,10 @@ def start():
 	st.markdown(""" <p style="font-size: 22px;">In what age category do you fit in?</p>""", unsafe_allow_html=True)
 	AgeCategory = st.selectbox("Select your answer", ("18-24", "25-29","30-34","35-39","40-44","45-59","50-54","55-59","60-64","65-69","70-74","75-79","80 or older"), key=9)
 	
-	return BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory
-
+	if k==1:
+		return BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory
+	else:
+		st.write("No)
 if st.button("Proceed", key='pro'):
 	m=str(start())
 	st.write(m)
