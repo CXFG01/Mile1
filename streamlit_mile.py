@@ -5,6 +5,7 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 lis=list()
+BMI=19
 
 if 'k' not in st.session_state:
     st.session_state.k = 0
@@ -26,7 +27,7 @@ def state():
 	st.session_state.form = 1
 	st.session_state.m=lis
 	
-BMI=0
+
 def start():
 	with st.form(key='form1'):
 		st.markdown(""" <p style="font-size: 22px;">Please answer the questions below: </p>""", unsafe_allow_html=True)
