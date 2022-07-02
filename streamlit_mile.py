@@ -15,13 +15,13 @@ if 'form' not in st.session_state :
     st.session_state.form = 0
 
 def add():
-	st.session_state.k +=1
+	st.session_state.k += 1
 
 def state():
-	st.session_state.state =1
+	st.session_state.state = 1
 	
 def formm():
-	st.session_state.form =1
+	st.session_state.form = 1
 	
 
 def start():
@@ -67,7 +67,7 @@ def start():
 		
 		if st.form_submit_button(label='Submit', on_click=state()):
 			formm()
-			predict(lis)
+			#predict(lis)
 			
 def predict(results):
 	st.write("Hello")
@@ -91,6 +91,6 @@ elif butt1 and st.session_state.state==0 :
 	start()
 if st.session_state.state==1 and st.session_state.form==1 :
 	predict(2)
-	st.write(st.session_state.form)
+	st.write("Helloooooooo")
   
 
