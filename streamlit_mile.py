@@ -166,7 +166,8 @@ if st.session_state.state==1 and st.session_state.form==1:
 	label_X[good_label_cols] = ordinal_encoder.fit_transform(X[good_label_cols])
 	
 	label_X
-
+	
+	ordinal_encoder.categories_
 	imp_lab_X=pd.DataFrame(my_imputer.fit_transform(label_X))
 	
 
