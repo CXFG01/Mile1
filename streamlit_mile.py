@@ -12,7 +12,7 @@ if 'state' not in st.session_state:
     st.session_state.state = 0
 
 if 'form' not in st.session_state :
-    st.session_state.form = 0
+    st.session_state.form = 69
 
 def add():
 	st.session_state.k +=1
@@ -69,7 +69,7 @@ if not butt1 and st.session_state.state==0:
 	""", unsafe_allow_html=True)
 	
 elif butt1 and st.session_state.state==0 :
-	st.session_state.form=str(start())
+	start()
 if st.session_state.state==1:
 	st.write(st.session_state.form)
   
