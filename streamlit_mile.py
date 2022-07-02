@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-import tensorflow as tf
+import keras
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.impute import SimpleImputer
 import joblib
