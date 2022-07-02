@@ -25,7 +25,6 @@ def add(value):
 def state():
 	st.session_state.state = 1
 	st.session_state.form = 1
-	st.session_state.m=lis
 	
 def predict(results):
 	st.write(results)
