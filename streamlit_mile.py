@@ -142,7 +142,9 @@ if st.session_state.state==1 and st.session_state.form==1:
 		     'KidneyDisease': [st.session_state.m[15]],
 		     'SkinCancer': [st.session_state.m[16]]}
 	X = pd.DataFrame(data=d)
+	X
 	cols= [col for col in X.columns]
+	cols
 
 	object_cols = [col for col in X.columns if X[col].dtype == "object"]
 
