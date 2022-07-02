@@ -156,6 +156,10 @@ if st.session_state.state==1 and st.session_state.form==1:
 
 	ordinal_encoder = OrdinalEncoder()
 	my_imputer=SimpleImputer(strategy='median')
+	
+	good_label_cols
+	
+	bad_label_cols
 
 	label_X = X.drop(bad_label_cols, axis=1)
 
