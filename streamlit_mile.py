@@ -13,7 +13,7 @@ st.header("Heart Disease App")
 
 lis=list()
 
-@st.cache(hash_funcs={'builtins.dict': lambda _: 1})
+@st.cache(hash_funcs={builtins.dict: lambda _: 1})
 def call():
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2 .pkl')
