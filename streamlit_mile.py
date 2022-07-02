@@ -9,9 +9,15 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 
+nn, clf2=0
 
 lis=list()
 
+@st.cache
+def call():
+	nn=joblib.load('nn.pkl')
+	clf2=joblib.load('clf2 .pkl')
+	
 
 if 'k' not in st.session_state:
     st.session_state.k = 0
@@ -124,7 +130,7 @@ with st.form(key='form1'):
 
 	st.form_submit_button(label='Submit', on_click=state())
 
-@st.cache	
+call()	
 if st.session_state.state==1 and st.session_state.form==1:
 	st.write("Your data so far:")
 	d = {'BMI': [st.session_state.m[0]],
@@ -161,13 +167,11 @@ if st.session_state.state==1 and st.session_state.form==1:
 	
 	st.write("The Prediction:")
 	st.write("Firstly, by the neural network:")
-	nn=joblib.load('nn.pkl')
 	pred1=pd.DataFrame(nn.predict(X)*100)
 	pred1.columns=["Probability of a Heart Problem"]
 	pred1
 	
 	st.write("Secondly, by the the extreme gradient booster:")
-	clf2=joblib.load('clf2 .pkl')
 	pred2=pd.DataFrame(clf2.predict_proba(X)*100)
 	pred2.columns=["Probability of not having a Heart Problem", "Probability ofhaving a Heart Problem"]
 	pred2
