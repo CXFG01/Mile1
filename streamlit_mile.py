@@ -5,8 +5,14 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 k=0
+if 'state' not in st.session_state:
+    st.session_state.state = 0
 def add(n):
 	n=n+1
+
+def state():
+	st.session_state.state +=1
+	
 
 def start():
 	with st.form(key='form1'):
@@ -39,12 +45,9 @@ def start():
 		AgeCategory = st.selectbox("Select your answer", ("18-24", "25-29","30-34","35-39","40-44","45-59","50-54","55-59","60-64","65-69","70-74","75-79","80 or older"), key=9)
 	
 		results=BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory
-		if st.form_submit_button(label='Submit'):
+		if st.form_submit_button(label='Submit', on_click=state()):
 			return results
-if st.button("Proceed", key='pro'):
-	m=str(start())
-	st.write(m)
-else:
+if not st.button("Proceed", key='pro'):
 	st.markdown("""
 	<p style="font-size: 22px;">Hey there! </p>
 	
@@ -56,5 +59,8 @@ else:
 	
 	<p style="font-size: 22px;">Now, let's see what the AI says about your situation! (Press Proceed at the top) </p>
 	""", unsafe_allow_html=True)
+else:
+	m=str(start())
+	st.write(m
   
 
