@@ -165,6 +165,6 @@ if st.session_state.state==1 and st.session_state.form==1:
 	
 	st.write("Secondly, by the the extreme gradient booster:")
 	clf2=joblib.load('clf2 .pkl')
-	pred2=pd.DataFrame(clf2.predict(X)*100)
-	#pred2.columns=["Probability of not having a Heart Problem", "Probability ofhaving a Heart Problem"]
+	pred2=pd.DataFrame(clf2.predict_proba(X)*100)
+	pred2.columns=["Probability of not having a Heart Problem", "Probability ofhaving a Heart Problem"]
 	pred2
