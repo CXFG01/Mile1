@@ -8,6 +8,9 @@ st.header("Heart Disease App")
 if 'k' not in st.session_state:
     st.session_state.k = 0
 
+if 'm' not in st.session_state:
+    st.session_state.m = 0
+
 if 'state' not in st.session_state:
     st.session_state.state = 0
 
@@ -62,11 +65,12 @@ def start():
 		AgeCategory = st.selectbox("Select your answer", ("18-24", "25-29","30-34","35-39","40-44","45-59","50-54","55-59","60-64","65-69","70-74","75-79","80 or older"), key=9)
 		lis.append(AgeCategory)
 		
-		
+		st.write(lis)
+		return lis
 		st.form_submit_button(label='Submit', on_click=state())
 			
 def predict(results):
-	st.write("Hello")
+	st.write(results)
 
 butt1=st.button("Proceed", key='pro', disabled=st.session_state.state)
 
@@ -84,9 +88,9 @@ if not butt1 and st.session_state.state==0:
 	""", unsafe_allow_html=True)
 	
 elif butt1 and st.session_state.state==0 :
-	start()
+	st.session_state.m=start()
 if st.session_state.state==1 and st.session_state.form==1 :
-	predict(2)
+	predict(st.session_state.m)
 	st.write("Helloooooooo")
   
 
