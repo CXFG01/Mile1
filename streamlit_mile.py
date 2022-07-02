@@ -93,7 +93,7 @@ with st.form(key='form1'):
 	st.session_state.m[9] = st.selectbox("Select your answer", ('American Indian/Alaskan Native', 'Asian', 'Black', 'Hispanic', 'Other', 'White'), key=10)
 
 		
-	st.markdown(""" <p style="font-size: 22px;">Ever Told/Had diabetes?p>""", unsafe_allow_html=True)
+	st.markdown(""" <p style="font-size: 22px;">Ever Told/Had diabetes?</p>""", unsafe_allow_html=True)
 	st.session_state.m[10]= st.selectbox("Select your answer", ('No', 'No, borderline diabetes', 'Yes', 'Yes (during pregnancy)'), key=11)
 
 		
