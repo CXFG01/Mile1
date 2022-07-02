@@ -159,9 +159,10 @@ if st.session_state.state==1 and st.session_state.form==1:
 	st.write("The Prediction:")
 	st.write("Firstly, by the neural network:")
 	nn=joblib.load('nn.pkl')
-	nn.predict(X)*100
+	pred1=nn.predict(X)*100
+	pred1.columns=["Probability of a Heart Problem"]
 	st.write("Secondly, by the the extreme gradient booster:")
 	clf2=joblib.load('clf2 .pkl')
-	clf2.predict_proba(X)*100
-  
+	pred2=clf2.predict_proba(X)*100
+	pred2.columns=["Probability of not having a Heart Problem", "Probability ofhaving a Heart Problem"]
 
