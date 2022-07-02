@@ -61,6 +61,6 @@ if not st.button("Proceed", key='pro'):
 	""", unsafe_allow_html=True)
 else:
 	m=str(start())
-	st.write(m
+	st.write(m)
   
 
