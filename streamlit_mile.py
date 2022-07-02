@@ -142,56 +142,11 @@ if st.session_state.state==1 and st.session_state.form==1:
 		     'KidneyDisease': [st.session_state.m[15]],
 		     'SkinCancer': [st.session_state.m[16]]}
 	X = pd.DataFrame(data=d)
+	switch={"Yes":1, "No":0}
+	X=X.replace(switch)
 	X
-	cols= [col for col in X.columns]
-	cols
-
-	object_cols = [col for col in X.columns if X[col].dtype == "object"]
-
-	# Columns that can be safely ordinal encoded
-	good_label_cols = [col for col in object_cols if set(X[col]).issubset(set(X[col]))]
-        
-	# Problematic columns that will be dropped from the dataset
-	bad_label_cols = list(set(object_cols)-set(good_label_cols))
-
-	ordinal_encoder = OrdinalEncoder(categories=[['No', 'Yes'],
- ['No', 'Yes'],
- ['No', 'Yes'],
- ['No', 'Yes'],
- ['No', 'Yes'],
- ['Female', 'Male'],
- ['18-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54',
-  '55-59', '60-64', '65-69', '70-74', '75-79', '80 or older'],
- ['American Indian/Alaskan Native', 'Asian', 'Black', 'Hispanic',
-        'Other', 'White'],
- ['No', 'No, borderline diabetes', 'Yes', 'Yes (during pregnancy)'],
- ['No', 'Yes'],
- ['Excellent', 'Fair', 'Good', 'Poor', 'Very good'],
- ['No', 'Yes'],
- ['No', 'Yes'],
- ['No', 'Yes'],
-])
-	my_imputer=SimpleImputer(strategy='median')
 	
-	good_label_cols
 	
-	bad_label_cols
-
-	label_X = X.drop(bad_label_cols, axis=1)
-
-	label_X[good_label_cols] = ordinal_encoder.fit_transform(X[good_label_cols])
-	
-	label_X
-	
-	ordinal_encoder.categories_
-	imp_lab_X=pd.DataFrame(my_imputer.fit_transform(label_X))
-	
-
-	X=imp_lab_X
-
-	X.columns=cols
-	
-	X
 	
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2.pkl')
