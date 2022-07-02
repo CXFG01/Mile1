@@ -49,7 +49,7 @@ def start():
 		if st.form_submit_button(label='Submit', on_click=state()):
 			return results
 butt1=st.button("Proceed", key='pro')
-if not butt1 and st.session_state.state!=0:
+if not butt1 and st.session_state.state==0:
 	st.markdown("""
 	<p style="font-size: 22px;">Hey there! </p>
 	
@@ -62,7 +62,7 @@ if not butt1 and st.session_state.state!=0:
 	<p style="font-size: 22px;">Now, let's see what the AI says about your situation! (Press Proceed at the top) </p>
 	""", unsafe_allow_html=True)
 	
-elif butt1 and st.session_state.state!=0 :
+elif butt1 and st.session_state.state==0 :
 	m=str(start())
 	st.write(m)
   
