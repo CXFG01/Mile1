@@ -9,7 +9,8 @@ import joblib
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
 
-nn, clf2=0
+nn=0
+clf2=0
 
 lis=list()
 
