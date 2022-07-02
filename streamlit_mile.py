@@ -9,7 +9,7 @@ if 'k' not in st.session_state:
     st.session_state.k = 0
 
 if 'm' not in st.session_state:
-    st.session_state.m = 0
+    st.session_state.m = list()
 
 if 'state' not in st.session_state:
     st.session_state.state = 0
@@ -23,6 +23,7 @@ def add():
 def state():
 	st.session_state.state = 1
 	st.session_state.form = 1
+	st.session_state.m=lis
 	
 
 def start():
@@ -87,6 +88,6 @@ if not butt1 and st.session_state.state==0:
 elif butt1 and st.session_state.state==0 :
 	st.session_state.m=start()
 if st.session_state.state==1 and st.session_state.form==1 :
-	st.write(lis)
+	st.write(st.session_state.m)
   
 
