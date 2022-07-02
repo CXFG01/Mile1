@@ -142,6 +142,8 @@ if st.session_state.state==1 and st.session_state.form==1:
 		     'KidneyDisease': [st.session_state.m[15]],
 		     'SkinCancer': [st.session_state.m[16]]}
 	X = pd.DataFrame(data=d)
+	X
+	st.write("Your data transformed:")
 	switch={"Yes":1, "No":0}
 	X=X.replace(switch)
 	X
