@@ -53,9 +53,13 @@ def start():
 	
 		results=list(BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory)
 		if st.form_submit_button(label='Submit', on_click=state()):
-			st.session_state.form = results
-			return st.session_state.form
+			predict(results)
+			
+def predict(results):
+	st.write("Hello")
+
 butt1=st.button("Proceed", key='pro', disabled=st.session_state.state)
+
 if not butt1 and st.session_state.state==0:
 	st.markdown("""
 	<p style="font-size: 22px;">Hey there! </p>
