@@ -36,7 +36,7 @@ while True:
 	
 		return BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory
 
-	if st.button("Proceed"):
+	if st.button("Proceed", key='pro'):
 		m=start()
 		print(m)
 	else:
