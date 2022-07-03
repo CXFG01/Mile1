@@ -176,3 +176,5 @@ if st.session_state.state==1 and st.session_state.form==1:
 	pred2=pd.DataFrame(clf2.predict_proba(X)*100)
 	pred2.columns=["Probability of not having a Heart Problem", "Probability ofhaving a Heart Problem"]
 	pred2
+	
+	st.success("Models executed")
