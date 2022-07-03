@@ -3,3 +3,4 @@ sklearn
 keras
 xgboost
 dill
+shap
