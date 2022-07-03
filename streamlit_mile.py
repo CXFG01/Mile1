@@ -19,7 +19,9 @@ def call():
 	clf2=joblib.load('clf2 .pkl')
 	return nn, clf2
 	
-
+if 'info' not in st.session_state:
+    st.session_state.info = 0
+	
 if 'k' not in st.session_state:
     st.session_state.k = 0
 
@@ -176,7 +178,8 @@ if st.session_state.state==1 and st.session_state.form==1:
 	pred2=pd.DataFrame(clf2.predict_proba(X)*100)
 	pred2.columns=["Probability of not having a Heart Problem", "Probability ofhaving a Heart Problem"]
 	pred2
-	
+	st.session_state.info=1
 	st.success("Models executed")
 
-st.button("So how does this work?")
+if st.button("So how does this work?") and st.session_state.info==1:
+	st.write("Hello")
