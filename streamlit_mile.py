@@ -184,4 +184,4 @@ if st.session_state.state==1 and st.session_state.form==1:
 if st.button("So how does this work?") and st.session_state.info==1:
 	st.markdown("""##""")
 	st.header("Explainability:")
-	st.write("Lets take a look at the finer details of your results:")
+	st.markdown("""<p style="font-size: 18px;">Lets take a look at the finer details of your results:</p>""", unsafe_allow_html=True)
