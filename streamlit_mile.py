@@ -5,6 +5,7 @@ import keras
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.impute import SimpleImputer
 import joblib
+import shap
 
 st.set_page_config(page_title="Heart Prediction", layout="wide")
 st.header("Heart Disease App")
