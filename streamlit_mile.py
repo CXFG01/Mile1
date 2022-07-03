@@ -184,4 +184,9 @@ if st.session_state.state==1 and st.session_state.form==1:
 if st.button("So how does this work?") and st.session_state.info==1:
 	st.markdown("""##""")
 	st.header("Explainability:")
-	st.markdown("""<p style="font-size: 18px;">Lets take a look at the finer details of your results:</p>""", unsafe_allow_html=True)
+	st.markdown("""<p style="font-size: 18px;">
+	Machine Learning Algorithms and Neural Networks are both "black box" objects. This means that the system produces useful information without the programmer knowing the information about the internal workings.
+	As such, it becomes hard to tell your friends or superiors what exactly is going on and how does the machine spit out the number that you are seeing.
+	Luckily, we are not the first generation to confront this problem, and so below let's try to explain how your results came about. 
+	
+	Using SHAP(SHapley Additive exPlanations) we can explain the output of the models:</p>""", unsafe_allow_html=True)
