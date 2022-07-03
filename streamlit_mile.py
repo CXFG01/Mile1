@@ -13,7 +13,7 @@ st.header("Heart Disease App")
 
 lis=list()
 
-@st.cache(ttl=60*6,hash_funcs={"builtins.dict": id}, allow_output_mutation=True )
+@st.cache(ttl=60*5,hash_funcs={"builtins.dict": id}, allow_output_mutation=True )
 def call():
 	nn=joblib.load('nn.pkl')
 	clf2=joblib.load('clf2 .pkl')
@@ -163,8 +163,8 @@ if st.session_state.state==1 and st.session_state.form==1:
 	X.Diabetic=X.Diabetic.replace(switch2)
 	X=X.replace(switch)
 	X
-	
-	nn, clf2 = call()
+	with st.spinner(text="Loading models"):
+		nn, clf2 = call()
 	
 	st.write("The Prediction:")
 	st.write("Firstly, by the neural network:")
